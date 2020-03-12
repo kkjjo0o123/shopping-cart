@@ -2,11 +2,17 @@
 
 @section('content')
                     @foreach($products as $product)
+                    <div class="col-md-4">    
+                                <div class="img-magnifier-container">
+                                    <img id="myimage" src="{{ asset('image/') }}/{{$product->image}}" width="450" height="280">
+                                </div>
+                    </div>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            
                     <div class="row">
-                        <div class="col-md-6"><img src="{{ asset('image/') }}/{{$product->image}}" alt="" class="img-fluid">                        </div>
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                         <form action="{!! URL::to('paypal') !!}" method="post">
                         {{ csrf_field() }}
+                            
                             <h5 class="card-title">{{$product->name}}</h5>
                             <p>{{$product->description}}</p>
                             <div style="height: 100px">Quantity <input type="number" id="qty" value="1" min="1" max="10">Available stock: {{{$product->quantity}}}
