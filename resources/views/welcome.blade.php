@@ -23,18 +23,18 @@
         <style>
             p.a {
                 font-style: italic;
+                
             }
 
             img {
                 border-radius: 50%;
             }
             body{
-                background-image: url(shoesbody.png);
+                background-image: url(3046992.jpg);
                 background-repeat: no-repeat;
                 background-size: cover;
             }
         
-
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -94,10 +94,10 @@
                     @auth
                         <a href="{{ url('/home') }}">HOME</a>
                     @else
-                        <a href="{{ route('login') }}"><font size="6">LOGIN</font></a>
+                        <a href="{{ route('login') }}"><font size="6" color="red">LOGIN</font></a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}"><font size="6">register</font></a>
+                            <a href="{{ route('register') }}"><font size="6" color="red">register</font></a>
                         @endif
                     @endauth
                 </div>
@@ -105,7 +105,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    <b>NON-STOP SHOES</b> <img src="{{ asset('shoeslogo.png') }}" alt="">
+                    <b><font color="red">NON-STOP SHOES</font></b> <img src="{{ asset('shoeslogo.png') }}" alt="">
                 </div>
 
                 <div class="links">

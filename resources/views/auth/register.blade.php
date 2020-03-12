@@ -26,6 +26,17 @@ Copy this code in your html file.
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
+                <form action="{{route('addProduct.store')}}" method="post" enctype="multipart/form-data">
+        {{csrf_field() }}
+            <div class="preview text-center">
+                <img class="preview-img" src="http://simpleicon.com/wp-content/uploads/account.png" alt="Preview Image" width="200" height="200"/>
+                <div class="browse-button">
+                    <i class="fa fa-pencil-alt"></i>
+                    <input class="browse-input" type="file" required name="product-image" id="product-image"/>
+                </div>
+                <span class="Error"></span>
+            </div>
+
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
